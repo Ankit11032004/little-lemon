@@ -8,11 +8,51 @@ body {
 
 /* Header & Footer */
 .footer {
-    background-color: #ffcc00;
-    padding: 20px;
-    font-size: 1.5rem;
-    font-weight: bold;
+  background-color: #4b615c; /* deep green */
+  color: white;
+  padding: 2rem 3rem;
 }
+
+.footer-columns {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-column {
+  min-width: 200px;
+}
+
+.footer-column h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  color: #f4ce14; /* lemon yellow */
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #fff3;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.footer-bottom a {
+  color: #f4ce14;
+  text-decoration: none;
+}
+
 
 /* Home Section */
 .home {
@@ -22,7 +62,7 @@ body {
 
 /* Reservation Form */
 .reservation-form {
-    background-color: #ff6600;
+    background-color: #ffd900bd;
     padding: 20px;
     margin: 20px;
     border-radius: 10px;
@@ -44,4 +84,27 @@ body {
     font-size: 1rem;
     border: none;
     cursor: pointer;
+}
+
+.card-img {
+  width: 100%;           /* image takes full width of card */
+  height: 150px;         /* fixed height for consistency */
+  object-fit: cover;     /* crops and fits the image neatly */
+  border-radius: 8px;    /* optional: adds smooth corners */
+}
+.card {
+  width: 250px;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  margin: 1rem;
+  text-align: center;
+}
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 2rem;
 }

@@ -1,10 +1,12 @@
 import React from "react";
 import "../Navbar.css";
+import Logo from "../img/Logo.svg"; // adjust path if needed
+
 
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <h1>Little Lemon</h1>
+      <img src={Logo} alt="Little Lemon Logo" className="logo" />
       <ul>
   <li><a href="/home">Home</a></li>
   <li><a href="/menu">Menu</a></li>
