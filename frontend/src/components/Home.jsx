@@ -13,14 +13,14 @@ function Home() {
         {/* Card 1 */}
         <div className="card" height="100px" width="100px">
           <img src={lemonDessert} alt="lemon" className="card-img" />
-          <h3>Classic Italian Pasta</h3>
-          <p>Rich, creamy Alfredo sauce over perfectly cooked fettuccine.</p>
+          <h3><b>Classic Italian Pastries</b></h3>
+          <p>Rich, creamy Alfredo over perfectly cooked.</p>
         </div>
 
         {/* Card 2 */}
         <div className="card" height="100px" width="100px">
           <img src={greekSalad} alt="Greek Salad" className="card-img" />
-          <h3>Fresh Greek Salad</h3>
+          <h3><b>Fresh Greek Salad</b></h3>
           <p>Crunchy veggies with feta and olives, dressed in olive oil.</p>
         </div>
       </div>

@@ -8,6 +8,12 @@ function ReservationForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    fetch("http://localhost:5000/api/auth/ReservataionForm", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
     alert(`Reservation made for ${name} on ${date} at ${time}`);
   };
 
@@ -21,18 +27,21 @@ function ReservationForm() {
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
+          className="bg-white text-black p-2 rounded"
         />
         <input
           type="date"
           value={date}
           onChange={(e) => setDate(e.target.value)}
           required
+          className="bg-white text-black p-2 rounded"
         />
         <input
           type="time"
           value={time}
           onChange={(e) => setTime(e.target.value)}
           required
+          className="bg-white text-black p-2 rounded"
         />
         <button type="submit">Reserve</button>
       </form>
