@@ -18,6 +18,7 @@ function LoginPage() {
     });
 
     const data = await res.json();
+    localStorage.setItem("user", JSON.stringify(data));
     if (data) {
       navigate("/");
       alert("Login successful!");

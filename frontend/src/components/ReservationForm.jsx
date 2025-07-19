@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "../styles.css";
 
 function ReservationForm() {
@@ -6,15 +6,42 @@ function ReservationForm() {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    fetch("http://localhost:5000/api/auth/ReservataionForm", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-    alert(`Reservation made for ${name} on ${date} at ${time}`);
+    const user = JSON.parse(localStorage.getItem("user")).user;
+    const _id = user?._id;
+    console.log(name, _id, date, time);
+
+    if (!name || !_id || !date || !time) {
+      console.log(name, _id, date, time);
+      alert("All fields are required.");
+      return;
+    }
+
+    try {
+      const response = await fetch("http://localhost:5000/api/auth/reservationForm", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ _id, name, date, time }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Something went wrong");
+      }
+
+      alert("Reservation successful!");
+      setName("");
+      setDate("");
+      setTime("");
+
+    } catch (err) {
+      console.error("Reservation error:", err);
+      alert(err.message);
+    }
   };
 
   return (
