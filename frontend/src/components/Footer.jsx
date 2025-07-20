@@ -24,12 +24,11 @@ function Footer() {
           <h4>Contact</h4>
           <p>
             <strong>Little Lemon</strong><br />
-            331 E <br />
-            LaSalle Street<br />
-            Illinois 60602, Kolkata<br />
+              Rajpura Sikh<br />
+            Alwar, Rajasthan<br />
             <br />
-            +55 11 9999-9999<br />
-            contact@littlelemon.com
+            +91 ******2409<br />
+            Ankityadav11032004@gmail.com
           </p>
         </div>
 
@@ -46,7 +45,7 @@ function Footer() {
 
       <div className="footer-bottom">
         <p>
-          Developed by <a href="#">Ankit Yadav</a><br />
+          Developed by<a href="#">Ankit Yadav</a><br />
           &copy; 2025 Little Lemon. All rights reserved.
         </p>
       </div>
