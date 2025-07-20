@@ -45,9 +45,19 @@ function ReservationForm() {
   };
 
   return (
-    <div className="reservation-form">
-      <h2>Reserve a Table</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="reservation-form"  
+     style={{
+    backgroundImage: "url('restaurant.jpg')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    minHeight: "50vh",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
+  }}>
+      
+      <form onSubmit={handleSubmit} style={{ background: "rgba(255, 255, 255, 0.85)", padding: "4rem", borderRadius: "10px" }}>
+       <h2><b>Reserve a Table</b></h2>
         <input
           type="text"
           placeholder="Your Name"

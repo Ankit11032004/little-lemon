@@ -1,29 +1,82 @@
+// Import necessary libraries and components
 import React from "react";
+import Slider from "react-slick"; // ✅ You missed this
 import lemonDessert from "../img/lemon_dessert.jpg";
 import greekSalad from "../img/greek_salad.jpg";
-import "../styles.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "./DishCard.css"; 
+import "../styles.css"; // Custom styling
+
+// Optional: If you want to use your own card component
+// import DishCard from "./DishCard"; 
+
+// Sample data for dishes
+const dishes = [
+  {
+    name: "Lemon Dessert",
+    img: lemonDessert,
+    },
+   {
+    name: "Paneer Sabji",
+    img: "/paneer.jpg", // Update the path as per your image location
+  },
+  {
+    name: "Pani Puri",
+    img: "pani-puri.jpg", // Update the path as per your image location
+  },
+   {
+    name: "Greek Salad",
+    img: greekSalad,
+    },
+   {
+    name: "Punjabi Thali",
+    img: "/punjabi-thali.jpg", // Update the path as per your image location
+  },
+  {
+    name: "Rasmalai",
+    img: "/rasmalai.jpg", // Update the path as per your image location
+  },
+   {
+    name: "Idli Dosa",
+    img: "/idli-dosa.jpg", // Update the path as per your image location
+  },
+];
 
 function Home() {
+  // Settings for the react-slick carousel
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 650,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+  };
+
   return (
-    <div className="home">
-      <h2>Welcome to Little Lemon</h2>
-      <p>Experience the best dining with us.</p>
+    <div className="carousel-container dish-cards">
+      <h2><b>Popular Dishesb</b></h2>
 
-      <div className="card-container">
-        {/* Card 1 */}
-        <div className="card" height="100px" width="100px">
-          <img src={lemonDessert} alt="lemon" className="card-img" />
-          <h3><b>Classic Italian Pastries</b></h3>
-          <p>Rich, creamy Alfredo over perfectly cooked.</p>
-        </div>
-
-        {/* Card 2 */}
-        <div className="card" height="100px" width="100px">
-          <img src={greekSalad} alt="Greek Salad" className="card-img" />
-          <h3><b>Fresh Greek Salad</b></h3>
-          <p>Crunchy veggies with feta and olives, dressed in olive oil.</p>
-        </div>
-      </div>
+      {/* Carousel */}
+      <Slider {...settings}>
+        {dishes.map((dish, index) => (
+          <div key={index} className="carousel-slide">
+            <img
+              src={dish.img}
+              alt={dish.name}
+              style={{
+                width: "100%",
+                height: "225px",
+                objectFit: "cover",
+                borderRadius: "10px"
+              }}
+            />
+            <h3><b>{dish.name}</b></h3>
+            </div>
+        ))}
+      </Slider>
     </div>
   );
 }
