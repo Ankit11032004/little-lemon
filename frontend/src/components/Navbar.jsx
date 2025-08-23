@@ -22,7 +22,7 @@ const Navbar = () => {
         <Link to="/">Home</Link>
         <Link to="/menu">Menu</Link>
         <Link to="/reservationform">Reserve a Table</Link>
-        <Link to="/contact">About Us</Link>
+        <Link to="/about">About Us</Link>
       </ul>
 
       <div className="profile-section">

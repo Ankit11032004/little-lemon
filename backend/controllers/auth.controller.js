@@ -26,9 +26,3 @@ exports.login = async (req, res) => {
     res.status(500).json({ error: 'Server error' });
   }
 };
-
-exports.checkEmail = async (req, res) => {
-  const { email } = req.body;
-  const user = await user.findOne({ email });
-  res.json({ available: !user });
-}

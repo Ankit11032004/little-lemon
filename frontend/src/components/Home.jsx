@@ -48,9 +48,9 @@ function Home() {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 1100,
     autoplay: true,
-    autoplaySpeed: 650,
+    autoplaySpeed: 800,
     slidesToShow: 3,
     slidesToScroll: 1,
   };

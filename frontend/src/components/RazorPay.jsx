@@ -1,15 +1,14 @@
 // src/components/RazorpayCheckout.jsx
 import React from "react";
 
-const RazorpayCheckout = () => {
+const RazorpayCheckout = ({ name, date, time }) => {
   const loadRazorpay = () => {
     const options = {
-      key: "KEY_ID", // Replace with your Razorpay Key ID
+      key: "rzp_test_gMRyCrgIZn9GsK", // Replace with your Razorpay Key ID
       amount: 50000, // Amount in paise (50000 paise = ₹500)
       currency: "INR",
       name: "My Business",
       description: "Test Transaction",
-      image: "https://your-logo-url.com/logo.png",
       handler: function (response) {
         alert(`Payment successful! Payment ID: ${response.razorpay_payment_id}`);
       },
